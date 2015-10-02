@@ -120,6 +120,23 @@ class JavaHighlighter(SyntaxHighlighter):
         "void": "bold",
         "int": "bold"
     }
+    
+class JavaScriptHighlighter(SyntaxHighlighter):
+    keyword_colors = {
+        "var": "yellow",
+        "while": "red",
+        "for": "red",
+        "if": "red",
+        "else": "red",
+        "typeof": "red",
+        "return": "red",
+        "break": "red",
+        "delete": "red",
+        "function": "cyan",
+        "string": "purple",
+        "decimal": "purple",
+        "bool": "purple",
+    }
 
 class SqlHighlighter(SyntaxHighlighter):
     keyword_colors = {
@@ -222,6 +239,8 @@ class PhpHighlighter(SyntaxHighlighter):
 def get_highlighter(parent, palette):
     if parent == "Java":
         return JavaHighlighter(palette)
+    if parent == "JavaScript":
+        return JavaScriptHighlighter(palette)
     if parent == "Python" or parent=="IPython":
         return PythonHighlighter(palette)
     if parent == "Sql":
