@@ -6,3 +6,4 @@ install:
     - "pip install py"
 
 script: cd lib/eco; py.test test/test_eco.py --runslow
+
